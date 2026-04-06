@@ -2,6 +2,16 @@
 
 Automated extraction of non-accrual footnotes from SEC 10-K/10-Q filings for Business Development Companies (BDCs).
 
+## Example Output
+
+Below are examples of footnote sections extracted from actual BDC SEC filings:
+
+![Footnote Example 1](docs/images/Screenshot%202026-04-06%20at%2011.44.21.png)
+*Example footnote definitions from a Schedule of Investments*
+
+![Footnote Example 2](docs/images/Screenshot%202026-04-06%20at%2011.45.04.png)
+*Additional footnote definitions showing the extraction scope*
+
 ## Architecture
 
 This pipeline uses a **deterministic-first approach** with an **AI reviewer backup** to ensure completeness:
