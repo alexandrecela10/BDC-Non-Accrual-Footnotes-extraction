@@ -1,0 +1,19 @@
+# Environment
+.env
+venv/
+__pycache__/
+*.pyc
+
+# Data files (too large for git)
+BDC Footnotes/
+output/*.csv
+output/*.json
+output/*.log
+output/chunks/
+
+# OS files
+.DS_Store
+
+# Logs
+logs/
+*.log
