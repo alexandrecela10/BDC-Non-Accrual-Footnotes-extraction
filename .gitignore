@@ -4,6 +4,9 @@ venv/
 __pycache__/
 *.pyc
 
+# Scripts with secrets
+auto_setup_and_run.sh
+
 # Data files (too large for git)
 BDC Footnotes/
 output/*.csv
