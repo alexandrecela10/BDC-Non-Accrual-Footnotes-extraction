@@ -117,11 +117,11 @@ def test_app_renders_and_runs_offline_sample():
     from streamlit.testing.v1 import AppTest
     at = AppTest.from_file(str(DEMO / "app.py"), default_timeout=60).run()
     assert not at.exception
-    at.radio[0].set_value("Offline sample (synthetic)").run()
+    at.radio[0].set_value("Made-up sample (works offline)").run()
     at.button[0].click().run()
     assert not at.exception
-    assert any(m.label == "Positions" and m.value == "5" for m in at.metric)
-    assert any(m.label == "Markers resolved" and m.value == "4 of 5" for m in at.metric)
+    assert any(m.label == "Loans and holdings" and m.value == "5" for m in at.metric)
+    assert any(m.label == "Footnote marks explained" and m.value == "4 of 5" for m in at.metric)
 
 
 @pytest.mark.skipif(os.environ.get("BDC_DEMO_LIVE") != "1", reason="set BDC_DEMO_LIVE=1 to hit SEC EDGAR")

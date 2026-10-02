@@ -129,7 +129,7 @@ def run(raw: bytes, meta: dict, on_step=None) -> Result:
         if on_step:
             on_step(step)
 
-    record(Step("1 · Fetch", meta.get("fetch_seconds", 0.0),
+    record(Step("1 · Download the report", meta.get("fetch_seconds", 0.0),
                 f"{len(raw) / 1e6:.1f} MB from {meta.get('source', 'upload')}",
                 details={"bytes": len(raw), "document": meta.get("document_url", "")}))
 
@@ -148,7 +148,7 @@ def run(raw: bytes, meta: dict, on_step=None) -> Result:
     as_of = chosen.as_of if chosen is not None else None
     t_locate = time.monotonic() - t
     found = ", ".join(f"{s.as_of} ({len(s.table_blocks)} tables)" for s in sections) or "none"
-    record(Step("2 · Locate schedule", round(t_locate, 2),
+    record(Step("2 · Find the list of loans", round(t_locate, 2),
                 f"Dated sections found: {found}. Parsing {as_of}.", ok=as_of is not None,
                 details={"period_from_edgar": meta.get("report_date") or None}))
     if as_of is None:
@@ -176,7 +176,7 @@ def run(raw: bytes, meta: dict, on_step=None) -> Result:
     # 3 parse tables
     t = time.monotonic()
     soi = parse_soi(raw, period, blocks=blocks, upper_markers=upper)
-    record(Step("3 · Parse tables", round(time.monotonic() - t, 2),
+    record(Step("3 · Read every table", round(time.monotonic() - t, 2),
                 f"{soi.tables_kept} of {soi.tables_in_section} tables in the section kept "
                 f"({soi.tables_continuation} headerless continuation pages). "
                 f"Units: {'thousands' if soi.units_multiplier == 1e3 else 'millions' if soi.units_multiplier == 1e6 else 'dollars'}.",
@@ -192,11 +192,11 @@ def run(raw: bytes, meta: dict, on_step=None) -> Result:
                  ("period_end", soi.as_of.isoformat())):
         pos[c] = v
     debt = pos[pos.instrument_bucket != "equity"] if len(pos) else pos
-    record(Step("4 · Standardise", round(time.monotonic() - t, 2),
+    record(Step("4 · Put every loan in the same columns", round(time.monotonic() - t, 2),
                 f"{len(pos)} positions ({len(debt)} debt, {len(pos) - len(debt)} equity), one row each.",
                 ok=len(pos) > 0))
 
-    record(Step("5 · Extract footnotes", round(t_notes, 2),
+    record(Step("5 · Read the footnotes", round(t_notes, 2),
                 f"{len(notes)} footnote definitions via {method}.", ok=len(notes) > 0,
                 details={"method": method, "repo_section_dates": repo_dates, "footnotes_trimmed": trimmed}))
 
@@ -234,7 +234,7 @@ def run(raw: bytes, meta: dict, on_step=None) -> Result:
     unresolved_distinct = sorted({mk for mk in distinct if lookup(mk) is None}, key=lambda x: (len(x), x))
     pos["footnote_markers"] = pos.footnote_markers.map(lambda m: ",".join(m))
     pos = pos[COLUMNS]
-    record(Step("6 · Resolve markers", round(time.monotonic() - t, 2),
+    record(Step("6 · Attach each footnote to its loans", round(time.monotonic() - t, 2),
                 f"{len(distinct) - len(unresolved_distinct)} of {len(distinct)} distinct markers resolved; "
                 f"{len(all_markers)} marker references on {int((pos.footnote_markers != '').sum())} rows.",
                 ok=not unresolved_distinct))
@@ -282,7 +282,7 @@ def run(raw: bytes, meta: dict, on_step=None) -> Result:
     }
     recon = ("no total row found" if fv_delta is None else
              f"fair value {fv_delta:+.2f}% vs the filing's total ({'pass' if qa['fair_value_reconciles'] else 'fail'})")
-    record(Step("7 · QA", round(time.monotonic() - t, 2),
+    record(Step("7 · Check totals and gaps", round(time.monotonic() - t, 2),
                 f"{recon}; {len(unresolved_distinct)} unresolved markers; "
                 f"{qa['rows_missing_fair_value']} rows without fair value.",
                 ok=bool(qa["fair_value_reconciles"]) and not unresolved_distinct))
