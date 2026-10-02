@@ -1,0 +1,48 @@
+ARCC ARES CAPITAL CORP 0001287750-26-000006 10-K 2025-12-31 https://www.sec.gov/Archives/edgar/data/1287750/000128775026000006/arcc-20251231.htm
+total s 11.5 peak RSS MB 671
+  1 · Fetch 1.11 24.5 MB from SEC EDGAR
+  2 · Locate schedule 0.87 Dated sections found: 2025-12-31 (79 tables), 2024-12-31 (74 tables). Parsing 2025-12-31.
+  3 · Parse tables 1.18 65 of 79 tables in the section kept (0 headerless continuation pages). Units: millions.
+  4 · Standardise 0.02 1409 positions (1007 debt, 402 equity), one row each.
+  5 · Extract footnotes 7.95 18 footnote definitions via repo extractor (parsers.footnote_extractor).
+  6 · Resolve markers 0.03 12 of 12 distinct markers resolved; 3573 marker references on 1344 rows.
+  7 · QA 0.01 fair value -0.48% vs the filing's total (pass); 0 unresolved markers; 0 rows without fair value.
+{"status": "ok", "rows": 1409, "rows_debt": 1007, "rows_equity": 402, "rows_missing_fair_value": 0, "rows_missing_cost": 1, "debt_rows_rate_parse_failed": 0, "debt_rows_with_spread": 902, "sum_fair_value": 29342800000.0, "sum_cost": 29249900000.0, "filing_total_row": "Total Investments", "filing_total_fair_value": 29484800000.0, "filing_total_cost": 29249900000.0, "fair_value_delta_pct": -0.482, "cost_delta_pct": 0.0, "fair_value_reconciles": true, "cost_reconciles": true, "xbrl_fair_value_facts": 1887, "footnotes_defined": 18, "markers_distinct": 12, "markers_resolved": 12, "markers_unresolved": [], "rows_non_accrual_candidate": 19, "footnote_method": "repo extractor (parsers.footnote_extractor)", "footnotes_trimmed": ["16", "3", "4", "5", "*", "13", "17"], "tolerance_pct": 1.0}
+requests: [(200, 798634), (200, 162404), (200, 24506239)]
+=====
+MAIN Main Street Capital CORP 0001396440-26-000094 10-Q 2026-06-30 https://www.sec.gov/Archives/edgar/data/1396440/000139644026000094/main-20260630.htm
+total s 7.7 peak RSS MB 415
+  1 · Fetch 0.7 13.4 MB from SEC EDGAR
+  2 · Locate schedule 0.72 Dated sections found: 2026-06-30 (30 tables), 2025-12-31 (28 tables). Parsing 2026-06-30.
+  3 · Parse tables 0.44 30 of 30 tables in the section kept (0 headerless continuation pages). Units: thousands.
+  4 · Standardise 0.02 619 positions (382 debt, 237 equity), one row each.
+  5 · Extract footnotes 5.58 36 footnote definitions via repo extractor (parsers.footnote_extractor).
+  6 · Resolve markers 0.01 21 of 21 distinct markers resolved; 968 marker references on 488 rows.
+  7 · QA 0.01 fair value +0.00% vs the filing's total (pass); 0 unresolved markers; 0 rows without fair value.
+{"status": "ok", "rows": 619, "rows_debt": 382, "rows_equity": 237, "rows_missing_fair_value": 0, "rows_missing_cost": 0, "debt_rows_rate_parse_failed": 0, "debt_rows_with_spread": 237, "sum_fair_value": 5746044000.0, "sum_cost": 4974649000.0, "filing_total_row": "Total Portfolio Company investments, June 30, 2026 (181.5% of net assets at fair value)", "filing_total_fair_value": 5746044000.0, "filing_total_cost": 4974649000.0, "fair_value_delta_pct": 0.0, "cost_delta_pct": 0.0, "fair_value_reconciles": true, "cost_reconciles": true, "xbrl_fair_value_facts": 1198, "footnotes_defined": 36, "markers_distinct": 21, "markers_resolved": 21, "markers_unresolved": [], "rows_non_accrual_candidate": 33, "footnote_method": "repo extractor (parsers.footnote_extractor)", "footnotes_trimmed": ["12", "32", "37"], "tolerance_pct": 1.0}
+requests: [('cache', 798634), (200, 159610), (200, 13405243)]
+=====
+GBDC GOLUB CAPITAL BDC, Inc. 0001476765-26-000048 10-Q 2026-06-30 https://www.sec.gov/Archives/edgar/data/1476765/000147676526000048/gbdc-20260630.htm
+total s 12.0 peak RSS MB 651
+  1 · Fetch 1.09 24.6 MB from SEC EDGAR
+  2 · Locate schedule 0.89 Dated sections found: 2026-06-30 (58 tables), 2025-09-30 (47 tables). Parsing 2026-06-30.
+  3 · Parse tables 1.05 53 of 58 tables in the section kept (8 headerless continuation pages). Units: thousands.
+  4 · Standardise 0.02 1812 positions (1522 debt, 290 equity), one row each.
+  5 · Extract footnotes 8.57 41 footnote definitions via repo extractor (parsers.footnote_extractor).
+  6 · Resolve markers 0.02 31 of 31 distinct markers resolved; 2404 marker references on 1522 rows.
+  7 · QA 0.01 fair value +0.00% vs the filing's total (pass); 0 unresolved markers; 0 rows without fair value.
+{"status": "ok", "rows": 1812, "rows_debt": 1522, "rows_equity": 290, "rows_missing_fair_value": 0, "rows_missing_cost": 0, "debt_rows_rate_parse_failed": 10, "debt_rows_with_spread": 1181, "sum_fair_value": 8196353000.0, "sum_cost": 8377113000.0, "filing_total_row": "Total investments", "filing_total_fair_value": 8196353000.0, "filing_total_cost": 8377113000.0, "fair_value_delta_pct": 0.0, "cost_delta_pct": 0.0, "fair_value_reconciles": true, "cost_reconciles": true, "xbrl_fair_value_facts": 2026, "footnotes_defined": 41, "markers_distinct": 31, "markers_resolved": 31, "markers_unresolved": [], "rows_non_accrual_candidate": 45, "footnote_method": "repo extractor (parsers.footnote_extractor)", "footnotes_trimmed": ["21", "28"], "tolerance_pct": 1.0}
+requests: [('cache', 798634), (200, 167460), (200, 24599095)]
+=====
+TCPC BlackRock TCP Capital Corp. 0001193125-26-336794 10-Q 2026-06-30 https://www.sec.gov/Archives/edgar/data/1370755/000119312526336794/tcpc-20260630.htm
+total s 7.0 peak RSS MB 453
+  1 · Fetch 1.11 18.9 MB from SEC EDGAR
+  2 · Locate schedule 0.48 Dated sections found: 2026-06-30 (11 tables), 2025-12-31 (11 tables). Parsing 2026-06-30.
+  3 · Parse tables 0.29 11 of 11 tables in the section kept (0 headerless continuation pages). Units: dollars.
+  4 · Standardise 0.01 319 positions (262 debt, 57 equity), one row each.
+  5 · Extract footnotes 4.97 15 footnote definitions via repo extractor (parsers.footnote_extractor).
+  6 · Resolve markers 0.01 12 of 12 distinct markers resolved; 596 marker references on 318 rows.
+  7 · QA 0.0 fair value +0.00% vs the filing's total (pass); 0 unresolved markers; 0 rows without fair value.
+{"status": "ok", "rows": 319, "rows_debt": 262, "rows_equity": 57, "rows_missing_fair_value": 0, "rows_missing_cost": 0, "debt_rows_rate_parse_failed": 45, "debt_rows_with_spread": 217, "sum_fair_value": 1290523348.0, "sum_cost": 1436179888.0, "filing_total_row": "Total Investments - 233.8% of Net Assets", "filing_total_fair_value": 1290523348.0, "filing_total_cost": 1436179888.0, "fair_value_delta_pct": 0.0, "cost_delta_pct": 0.0, "fair_value_reconciles": true, "cost_reconciles": true, "xbrl_fair_value_facts": 448, "footnotes_defined": 15, "markers_distinct": 12, "markers_resolved": 12, "markers_unresolved": [], "rows_non_accrual_candidate": 0, "footnote_method": "repo extractor (parsers.footnote_extractor)", "footnotes_trimmed": [], "tolerance_pct": 1.0}
+requests: [('cache', 798634), (200, 138707), (200, 18896396)]
+=====

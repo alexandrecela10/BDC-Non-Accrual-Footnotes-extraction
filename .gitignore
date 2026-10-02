@@ -20,3 +20,7 @@ output/chunks/
 # Logs
 logs/
 *.log
+
+# Local secrets backup and demo virtualenv
+.env.bak
+.venv-demo/

@@ -1,0 +1,8 @@
+# BDC Footnote Tape demo. Streamlit Community Cloud reads this file because it sits next to
+# the entrypoint (demo/app.py). No LLM client: the demo is rules-only.
+streamlit>=1.46
+pandas>=2.0
+lxml>=5.0
+beautifulsoup4>=4.12
+requests>=2.31
+pytest>=8.0
