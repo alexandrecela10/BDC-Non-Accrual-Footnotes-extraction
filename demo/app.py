@@ -36,14 +36,14 @@ EXAMPLES = {
 
 st.set_page_config(page_title="BDC Footnote Tape", layout="wide")
 st.title("BDC Footnote Tape")
-st.caption("Give it a lending fund's quarterly or annual report. Get back one spreadsheet row per loan, "
-           "with each loan's footnotes written out. Fixed rules only, no AI.")
+st.caption("You're a credit analyst. Give it a lending fund's quarterly or annual report. You get back one "
+           "spreadsheet row per loan, with each loan's footnotes written out. Fixed rules only, no AI.")
 
 with st.sidebar:
     st.subheader("About")
     st.write("A BDC is a stock-listed fund that lends to private companies. Every quarter it files a list of "
              "all its loans with the US regulator (the SEC). Each loan's status, such as 'stopped paying interest', "
-             "is a small footnote mark explained pages away. This demo turns that list into one clean table.")
+             "is a small footnote mark explained pages away. This demo turns that list into one clean table for you.")
     st.write(f"Largest report: {edgar.MAX_FILING_MB} MB. Reports per visit: {SESSION_RUNS}. "
              f"Requests to the SEC: at most {edgar.MAX_REQUESTS_PER_SECOND} per second, saved for reuse.")
     st.write("Results from real reports are **public SEC data**. Labels such as 'stopped paying interest' "
@@ -151,7 +151,7 @@ if go:
 res = st.session_state.get("result")
 if res is not None:
     meta, qa = res.meta, res.qa
-    st.header("3. Result")
+    st.header("3. Your result")
     who = meta.get("company") or "Uploaded report"
     label = "synthetic sample" if meta.get("source") == "synthetic sample" else "public SEC data"
     st.write(f"**{who}** · {meta.get('form', '')} · period {meta.get('period_end', '?')} · "
